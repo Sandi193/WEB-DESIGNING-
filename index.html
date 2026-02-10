@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trello-Inspired Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Trello-Inspired Task List</h1>
+
+  <!-- Instructions Section -->
+  <div id="instructions">
+    <h2>How It Works</h2>
+    <ul>
+      <li><strong>To Do:</strong> Add new tasks here. Each task will automatically include the date and time when it was created. Tasks are shown with a 📋 checklist icon.</li>
+      <li><strong>In Progress:</strong> Move tasks here when you start working on them. They will display with a ⏳ checkbox and the date/time when they were started. Clicking the checkbox will mark the task as completed and move it to the Done section.</li>
+      <li><strong>Done:</strong> Completed tasks appear here with a ✅ icon and the date/time when they were finished. The task name will be shown as “Task Name – Completed”.</li>
+      <li><strong>Delete:</strong> Each task has a delete button to remove it individually.</li>
+      <li><strong>Clear All:</strong> Each section has a “Clear All” button to remove all tasks from that section at once.</li>
+      <li><strong>Custom Cursor:</strong> The website uses a red round cursor for a modern interactive feel.</li>
+    </ul>
+  </div>
+
+  <div id="board">
+    <div class="column todo" data-status="todo">
+      <h2>To Do</h2>
+      <div class="task-list" id="todo"></div>
+      <button onclick="addTask('todo')">+ Add Task</button>
+      <button onclick="clearSection('todo')">Clear All</button>
+    </div>
+    <div class="column inprogress" data-status="inprogress">
+      <h2>In Progress</h2>
+      <div class="task-list" id="inprogress"></div>
+      <button onclick="addTask('inprogress')">+ Add Task</button>
+      <button onclick="clearSection('inprogress')">Clear All</button>
+    </div>
+    <div class="column done" data-status="done">
+      <h2>Done</h2>
+      <div class="task-list" id="done"></div>
+      <button onclick="clearSection('done')">Clear All</button>
+    </div>
+  </div>
+
+  <!-- Custom cursor -->
+  <div class="cursor"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
